@@ -1,3 +1,5 @@
+// app/(dashboard)/[storeId]/(routes)/banners/[bannerId]/page.tsx
+
 import db from "@/lib/db";
 import {BannerForm} from "./components/banner-form";
 
@@ -6,6 +8,10 @@ interface PageParams {
   bannerId: string;
 }
 
+// Optional: agar halaman tidak di-pre-render saat build
+export const dynamic = "force-dynamic";
+
+// ✅ Ini sudah aman dipakai dengan async dan tidak akan error saat build
 export default async function BannerPage({params}: {params: PageParams}) {
   const banner = await db.banner.findUnique({
     where: {
