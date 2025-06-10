@@ -45,6 +45,12 @@ const StoreSwitcher = ({className, items = []}: StoreSwitcherProps) => {
 
   const [open, setOpen] = useState(false);
 
+  /*************  ✨ Windsurf Command ⭐  *************/
+  /**
+   * Callback when user selects a store from the switcher
+   * @param {Object} store - {value: string, label: string}
+   */
+  /*******  18571ba6-ef96-4e07-88bd-896848200dcb  *******/
   const onStoreSelect = (store: {value: string; label: string}) => {
     setOpen(false);
     router.push(`/${store.value}`);
