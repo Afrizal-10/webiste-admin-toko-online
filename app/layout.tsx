@@ -1,6 +1,6 @@
 import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
-import "./globals.css";
+import "./globals.css"; // ← pastikan file ini benar-benar ada
 import {ClerkProvider} from "@clerk/nextjs";
 import {ModalProvider} from "@/providers/modal-provider";
 import {ToasterProvider} from "@/providers/toast-provider";
