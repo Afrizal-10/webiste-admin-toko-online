@@ -1,16 +1,12 @@
 import db from "@/lib/db";
 import {BannerForm} from "./components/banner-form";
-import {type ReadonlyURLSearchParams} from "next/navigation";
 
 interface PageParams {
-  params: {
-    storeId: string;
-    bannerId: string;
-  };
-  searchParams?: ReadonlyURLSearchParams;
+  storeId: string;
+  bannerId: string;
 }
 
-const BannerPage = async ({params}: PageParams) => {
+export default async function BannerPage({params}: {params: PageParams}) {
   const banner = await db.banner.findUnique({
     where: {
       id: params.bannerId,
@@ -24,6 +20,4 @@ const BannerPage = async ({params}: PageParams) => {
       </div>
     </div>
   );
-};
-
-export default BannerPage;
+}
